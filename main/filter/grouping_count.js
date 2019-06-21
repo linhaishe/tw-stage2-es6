@@ -3,6 +3,9 @@
 function grouping_count(collection) {
 
   //在这里写入代码
+  let result = {};
+  collection.filter(v => result[v] !== undefined ? ++result[v] : result[v] = 1);
+  return result;
 }
 
 module.exports = grouping_count;

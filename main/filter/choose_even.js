@@ -2,11 +2,7 @@
 
 function choose_even(collection) {
   //在这里写入代码
-  let result = collection.filter(function(x){
-    return x%2 === 0;
-  })
-  console.log(result);
-  return result;
+  return collection.filter(v => v % 2 === 0);
 }
 
 module.exports = choose_even;
