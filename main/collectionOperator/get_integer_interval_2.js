@@ -1,25 +1,25 @@
-'use strict';
+"use strict";
 
-function get_integer_interval_2(number_a, number_b) {
-  //在这里写入代码
-  let result = [];
-  if (number_a <= number_b) {
-    for (let i = number_a; i <= number_b; i++) {
-      if (i % 2 == 0) {
-        result.push(i);
-      }
+let get_integer_interval_2 = (number_a, number_b) =>
+  getEvenArr(get_integer_interval_arr(number_a, number_b));
+//获得给定数值的区间
+let get_integer_interval_arr = (num1, num2) => {
+  let integerArr = [];
+  if (num2 > num1) {
+    for (let i = num1; i <= num2; i++) {
+      integerArr.push(i);
+    }
+  } else {
+    //num2<num1,num1>num2
+    for (let i = num1; i >= num2; i--) {
+      integerArr.push(i);
     }
   }
-  else {
-    for (let i = number_a; i >= number_b; i--) {
-      if (i % 2 == 0) {
-        result.push(i);
-      }
-    }
-  }
-  console.log(result);
-  return result;
-}
+  return integerArr;
+};
 
+//获取偶数
+
+let getEvenArr = (collection) => collection.filter((item) => item % 2 === 0);
 
 module.exports = get_integer_interval_2;
